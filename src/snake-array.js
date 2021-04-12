@@ -1,15 +1,15 @@
-const snakeArray = (snakeStart) => {
+const snakeArray = (snakeStart, rows = 6, cols = 7) => {
     let arr = [];
   
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < rows; i++) {
       arr.push([]);
     }
     
-    let counter = 1;
+    let counter = snakeStart;
     let startRow = 0;
-    let endRow = 5;
+    let endRow = rows - 1;
     let startCol = 0;
-    let endCol = 6;
+    let endCol = cols - 1;
     
     while (startCol <= endCol && startRow <= endRow) {
       //Top
