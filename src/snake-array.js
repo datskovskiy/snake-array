@@ -1,11 +1,10 @@
 const snakeArray = (snakeStart) => {
-    let arr = []; //Think of data structure as: arr[row][col]
+    let arr = [];
   
     for (let i = 0; i < 6; i++) {
       arr.push([]);
     }
     
-    //Setup variables.
     let counter = 1;
     let startRow = 0;
     let endRow = 5;
@@ -13,25 +12,25 @@ const snakeArray = (snakeStart) => {
     let endCol = 6;
     
     while (startCol <= endCol && startRow <= endRow) {
-      //Top - SR
+      //Top
       for (let i = startCol; i <= endCol; i++) {
         arr[startRow][i] = counter++;
       }
       startRow++;
       
-      //Right - EC
+      //Right
       for (let i = startRow; i <= endRow; i++) {
         arr[i][endCol] = counter++;
       } 
       endCol--;
       
-      //Bottom - ER
+      //Bottom
       for (let i = endCol; i >= startCol; i--) {
         arr[endRow][i] = counter++;
       }
       endRow--;
       
-      //left - SC
+      //Left
       for (let i = endRow; i >= startRow; i--) {
         arr[i][startCol] = counter++;
       }
